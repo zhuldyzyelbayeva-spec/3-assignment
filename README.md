@@ -17,15 +17,15 @@ The database schema is located in `resources/schema.sql`.
 
 ## Screenshots
 
-### Project structure
-![Project structure](docs/screenshots/structure.png)
+### Connected result
+![Project structure](docs/screenshots/connected.png)
 
-### UML diagram
-![UML diagram](docs/screenshots/uml.png)
+### Final State diagram
+![UML diagram](docs/screenshots/final_state.png)
 
 ### Database diagram
 ![UML diagram](docs/screenshots/database.png)
 
 
 ### Project structure
-![Project structure](docs/screenshots/Снимок экрана 2026-01-22 010847.png)
+![Project structure](docs/screenshots/projectstructure.gitkeep.png)
