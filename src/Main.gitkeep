@@ -1,1 +1,22 @@
 
+import model.ParkingEvent;
+import model.User;
+import service.ParkingService;
+import repository.UserRepository;
+
+public class Main {
+    public static void main(String[] args) {
+
+        UserRepository userDao = new UserRepository();
+        ParkingService service = new ParkingService();
+
+        User user = userDao.findById(1);
+
+        ParkingEvent event = new ParkingEvent(user, false); // true / false
+        service.processParking(event);
+
+        System.out.println("FINAL STATE:");
+        System.out.println("Rating: " + user.getRating());
+        System.out.println("Bonus minutes: " + user.getBonusMinutes());
+    }
+}
