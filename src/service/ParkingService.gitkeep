@@ -1,1 +1,23 @@
 
+package service;
+
+import model.ParkingEvent;
+import model.User;
+import repository.UserRepository;
+
+public class ParkingService {
+
+    private final UserRepository userDao = new UserRepository();
+
+    public void processParking(ParkingEvent event) {
+        User user = event.getUser();
+
+        if (event.isCorrectParking()) {
+            user.addBonusMinutes(5);
+        } else {
+            user.decreaseRating();
+        }
+
+        userDao.updateUser(user);
+    }
+}
