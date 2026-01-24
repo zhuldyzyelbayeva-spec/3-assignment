@@ -11,7 +11,8 @@ The project follows a layered architecture:
 - utils – utility classes
 
 ## Database
-The database schema is located in `resources/schema.sql`.
+The database schema was created manually in PostgreSQL using pgAdmin.
+The project connects to the database using JDBC.
 
 ## Screenshots
 
