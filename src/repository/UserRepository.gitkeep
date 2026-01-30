@@ -1,17 +1,18 @@
-
 package repository;
 
 import model.User;
+import model.interfaces.CrudRepository;
 import utils.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
-import repository.interfaces.CrudRepository;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserRepository implements CrudRepository<User> {
 
+    @Override
     public User findById(int id) {
         String sql = "SELECT * FROM users WHERE id = ?";
 
@@ -28,14 +29,23 @@ public class UserRepository implements CrudRepository<User> {
                         rs.getDouble("rating")
                 );
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return null;
     }
 
-    public void updateUser(User user) {
+    @Override
+    public List<User> findAll() {
+        return new ArrayList<>();
     }
+
+    @Override
+    public void save(User entity) {}
+
+    @Override
+    public void update(User entity) {}
+
+    @Override
+    public void delete(int id) {}
 }
