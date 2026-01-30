@@ -1,14 +1,14 @@
-
 package model;
 
 public abstract class BaseEntity {
 
-   private int id;
-   private String name;
+    private int id;
+    private String name;
 
-   public void setName(String name) {
-   this.name = name;
-   }
+    public void setName(String name) {
+        this.name = name;
+    }
+
 
     public BaseEntity(int id, String name) {
         this.id = id;
