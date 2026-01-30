@@ -1,19 +1,13 @@
 package utils;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import model.User;
+import java.util.List;
 
-public class ReflectionUtils {
+public class SortingUtils {
 
-    public static void printClassInfo(Class<?> clazz) {
-        System.out.println("Class: " + clazz.getName());
-
-        for (Field f : clazz.getDeclaredFields()) {
-            System.out.println("Field: " + f.getName());
-        }
-
-        for (Method m : clazz.getDeclaredMethods()) {
-            System.out.println("Method: " + m.getName());
-        }
+    public static void sortUsersByRating(List<User> users) {
+        users.sort((u1, u2) ->
+                Double.compare(u2.getRating(), u1.getRating())
+        );
     }
 }
