@@ -1,40 +1,32 @@
-
 package model;
 
-public class User extends BaseEntity {
+public class User {
 
+    private int id;
+    private String name;
     private double rating;
-    private int bonusMinutes;
 
     public User(int id, String name, double rating) {
-        super(id, name);
+        this.id = id;
+        this.name = name;
         this.rating = rating;
-        this.bonusMinutes = 0;
     }
 
-    @Override
-    public String getEntityType() {
-        return "USER";
+    public int getId() {
+        return id;
     }
 
-    @Override
-    public boolean isActive() {
-        return rating >= 2.0;
-    }
-
-    public void decreaseRating() {
-        rating -= 0.5;
-    }
-
-    public void addBonusMinutes(int minutes) {
-        bonusMinutes += minutes;
+    public String getName() {
+        return name;
     }
 
     public double getRating() {
         return rating;
     }
 
-    public int getBonusMinutes() {
-        return bonusMinutes;
+    public void decreaseRating() {
+    }
+
+    public void addBonusMinutes(int i) {
     }
 }
