@@ -12,3 +12,4 @@ public interface Rewardable {
         System.out.println("Rewardable interface in use");
     }
 }
+ 
