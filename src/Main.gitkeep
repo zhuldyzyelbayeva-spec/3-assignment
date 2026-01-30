@@ -1,3 +1,9 @@
+import utils.ReflectionUtils;
+import model.Rewardable;
+import model.User;
+
+ReflectionUtils.printClassInfo(User.class);
+Rewardable.printInfo();
 
 import model.ParkingEvent;
 import model.User;
