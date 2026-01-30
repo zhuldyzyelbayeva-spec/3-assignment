@@ -1,29 +1,29 @@
-import utils.ReflectionUtils;
-import model.Rewardable;
 import model.User;
-import model.ParkingEvent;
-import service.ParkingService;
-import repository.UserRepository;
+import utils.SortingUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        
-        ReflectionUtils.printClassInfo(User.class);
+        List<User> users = new ArrayList<>();
 
-        Rewardable.printInfo();
+        users.add(new User(1, "Alice", 4.5));
+        users.add(new User(2, "Bob", 3.2));
+        users.add(new User(3, "Charlie", 5.0));
 
-        UserRepository userDao = new UserRepository();
-        ParkingService service = new ParkingService();
+        System.out.println("Before sorting:");
+        users.forEach(u ->
+                System.out.println(u.getName() + " -> " + u.getRating())
+        );
 
-        User user = userDao.findById(1);
+        SortingUtils.sortUsersByRating(users);
 
-        ParkingEvent event = new ParkingEvent(user, false);
-        service.processParking(event);
-
-        System.out.println("FINAL STATE:");
-        System.out.println("Rating: " + user.getRating());
-        System.out.println("Bonus minutes: " + user.getBonusMinutes());
+        System.out.println("\nAfter sorting by rating:");
+        users.forEach(u ->
+                System.out.println(u.getName() + " -> " + u.getRating())
+        );
     }
 }
