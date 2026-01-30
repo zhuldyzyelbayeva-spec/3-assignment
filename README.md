@@ -1,5 +1,5 @@
 # 3-assignment
-# AI poweresd Smart Camera system for e-scooters
+# AI powered Smart Camera system for e-scooters
 
 ## Project Description
 
